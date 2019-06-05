@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "rio_gallegos",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -69.335469506343301, -51.671819887893797 ], [ -69.335469506343301, -51.592037422074597 ], [ -69.161471269713999, -51.592037422074597 ], [ -69.161471269713999, -51.671819887893797 ], [ -69.335469506343301, -51.671819887893797 ] ] ] } }
+]
+}

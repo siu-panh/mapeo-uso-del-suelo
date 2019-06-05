@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "rio_grande",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -67.803918850874894, -53.824944661092907 ], [ -67.803918850874894, -53.718397818896307 ], [ -67.647740248749102, -53.718397818896307 ], [ -67.647740248749102, -53.824944661092907 ], [ -67.803918850874894, -53.824944661092907 ] ] ] } }
+]
+}

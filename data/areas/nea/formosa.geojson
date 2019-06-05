@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "formosa",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -58.25798558599999, -26.224803214 ], [ -58.25798558599999, -26.114781622999899 ], [ -58.132649822999902, -26.114781622999899 ], [ -58.132649822999902, -26.224803214 ], [ -58.25798558599999, -26.224803214 ] ] ] } }
+]
+}

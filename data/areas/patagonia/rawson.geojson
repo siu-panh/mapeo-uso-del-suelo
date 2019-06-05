@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "rawson",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -65.196283797441694, -43.404886350037103 ], [ -65.196283797441694, -43.2232976191316 ], [ -64.971291033121304, -43.2232976191316 ], [ -64.971291033121304, -43.404886350037103 ], [ -65.196283797441694, -43.404886350037103 ] ] ] } }
+]
+}
