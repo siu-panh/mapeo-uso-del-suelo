@@ -1,44 +1,42 @@
 # Ubuntu as base image
-FROM ubuntu:latest
+FROM ubuntu:18.04
 
-RUN mkdir ap-siu-habitat
+RUN apt-get update \
+	&& apt-get install -y software-properties-common
 
-# Copiando requirements  al container
-COPY ./requirements.txt /ap-siu-habitat/requirements.txt 
+RUN add-apt-repository ppa:ubuntugis/ppa \
+	&& apt-get update \
+	&& apt-get install --no-install-recommends -y \
+		software-properties-common \
+		python3 \
+		python3-dev \
+		python3-pip \
+		wget \
+		libgdal-dev \
+		gdal-bin \ 
+		libspatialindex-dev \
+		libsm6 \
+		libxext6 \
+		libxrender-dev \
+	&& rm -rf /var/lib/apt/lists/*
 
-RUN apt-get update
-RUN apt-get install -y software-properties-common
-RUN apt-get -y install wget
-
-# Instalando python3 
-RUN apt-get -y install python3
-RUN apt-get -y install python3-dev
-RUN apt-get -y install python3-pip
-
-
-# Instalando GDAL 
-RUN add-apt-repository ppa:ubuntugis/ppa
-RUN apt-get update
-RUN apt-get -y install libgdal-dev gdal-bin libspatialindex-dev libsm6 libxext6 libxrender-dev
-
-# Instalando extension de GDAL para Python y otras extensiones necesarias 
-RUN export CPLUS_INCLUDE_PATH=/usr/include/gdal
-RUN export C_INCLUDE_PATH=/usr/include/gdal
-
+RUN mkdir /ap-siu-habitat
 
 RUN pip3 install --upgrade pip
+
+RUN apt-get update && apt-get install -y python3-setuptools build-essential
+
+# Install pip dependencies
+COPY ./requirements.txt /ap-siu-habitat/requirements.txt 
 RUN pip3 install -r /ap-siu-habitat/requirements.txt
-RUN pip3 install GDAL==$(gdal-config --version) --global-option=build_ext --global-option="-I/usr/include/gdal"
+
+# Install GDAL for Python
+ENV CPLUS_INCLUDE_PATH /usr/include/gdal
+ENV C_INCLUDE_PATH /usr/include/gdal
+RUN pip3 install GDAL==$(gdal-config --version) \
+		--global-option=build_ext \
+		--global-option="-I/usr/include/gdal"
 
 EXPOSE 8888
 
-
 CMD ["/ap-siu-habitat/init_install.sh"]
-
-# Ejecutar docker container
-#docker run -p 8888:8888 -v ~/Desarrollos/ap-siu-habitat/:/ap-siu-habitat/ siu
-
-#Ejecutar container en background e interactivo con bash 
-#docker run -v ~/Desarrollos/ap-siu-habit	at/:/ap-siu-habitat/ -dit siu bash --name ap-siu-habitat
-
-
