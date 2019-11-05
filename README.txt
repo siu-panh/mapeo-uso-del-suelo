@@ -10,8 +10,8 @@ ejecutar este proyecto.
 Los pasos para construir la imágen y correr el container _Docker_ son los
 siguientes
 
-1. Construir la imagen con el script `build_docker.sh`
-2. Ejecutar el container con el script  `run_docker.sh`
+1. Construir la imagen con el script `build_docker.bat`
+2. Ejecutar el container con el script  `run_docker.bat`
 3. Acceder al servidor `jupyter` haciendo click en el link
 
 ## Uso
