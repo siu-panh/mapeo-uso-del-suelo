@@ -1,4 +1,4 @@
-# ap-siu-habitat
+# Identificación de Usos del Suelo mediante Imágenes Satelitales
 
 ## Instalación
 
