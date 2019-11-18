@@ -2,44 +2,15 @@
 
 ## Instalación
 
-### Instalación manual (Windows)
-
-La forma más sencilla de instalar lo necesario para ejecutar el código de este
-repositorio es utilizando [Anaconda](https://www.anaconda.com/) y
-[OSGeo4W](https://trac.osgeo.org/osgeo4w/).
-
-Primero descargue el instalador de Anaconda para Python 3.7 version 64-bit, y
-siga los pasos para instalarlo en su sistema.  Los notebooks fueron testeados
-con la versión **2019-10**. 
-
-Ejecute *Anaconda Prompt* para abrir una consola de linea de comandos con
-Anaconda configurado. 
-
-Ahora ejecute los siguientes comandos para crear un entorno virtual para el
-proyecto y activarlo:
-
-```
-conda create -n mapeo python=3
-conda activate mapeo
-```
-
-Luego, el siguiente comando para instalar y configurar GDAL, y otras
-dependencias de Python:
-
-```
-conda install gdal==3.0.2
-set GDAL_VERSION=3.0.2
-pip install -r requirements.txt
-```
-
-
-### Instalación con Docker (Windows, Linux, OSX)
+### Instalación con Docker (Linux, OSX)
 
 Como pre-requisito, debe tener instalado _Docker_ en el equipo donde quiere
 ejecutar este proyecto. 
 
-Para construir la imagen de _Docker_, debe ejecutar el script
-`build_docker.bat` (Windows) o `build_docker.sh` (Linux, OSX). 
+Para construir la imagen de _Docker_, debe ejecutar el script `build_docker.sh` (Linux, OSX). 
+
+Ejecute `run_docker.sh` (Linux, OSX) para ejecutar
+el contenedor y activar Jupyter.
 
 
 ## Uso
@@ -58,21 +29,6 @@ El notebook `PostProcessing.ipynb` explica como usar los scripts que permiten
 post-procesar las salidas del modelo para generar las estadísticas y mapas de
 uso del suelo.
 
-### Anaconda (Windows)
-
-Ejecute Anaconda Prompt para abrir una consola, y active el entorno virtual:
-
-```
-conda activate mapeo
-```
-
-Luego, ejecute `jupyter notebook` para levantar el servidor de notebooks.
-Entre a la URL que se imprime en pantalla con su navegador web.
-
-### Docker
-
-Ejecute `run_docker.bat` (Windows) o `run_docker.sh` (Linux, OSX) para ejecutar
-el contenedor y activar Jupyter.
 
 ## Licencia
 
