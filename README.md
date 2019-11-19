@@ -2,14 +2,12 @@
 
 ## Instalación
 
-### Instalación con Docker (Linux, OSX)
-
 Como pre-requisito, debe tener instalado _Docker_ en el equipo donde quiere
 ejecutar este proyecto. 
 
-Para construir la imagen de _Docker_, debe ejecutar el script `build_docker.sh` (Linux, OSX). 
+Para construir la imagen de _Docker_, debe ejecutar el script `build_docker.sh`. 
 
-Ejecute `run_docker.sh` (Linux, OSX) para ejecutar
+Ejecute `run_docker.sh` para ejecutar
 el contenedor y activar Jupyter.
 
 
