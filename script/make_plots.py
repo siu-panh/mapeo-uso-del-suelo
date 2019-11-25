@@ -225,6 +225,7 @@ def main(args):
         plot_histogram(values, name=name, output=hist_output_path, years=years)
         print("{} written".format(hist_output_path))
 
+        print(glob(os.path.join(args.images_dir, region_city, '*')))
         original_image_paths = [
             glob(os.path.join(args.images_dir, region_city, '{year}.vrt'.format(year=year)))[0]
             for year in years
